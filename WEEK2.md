@@ -1,6 +1,3 @@
-Here's the complete blog post in Markdown format, with the updated Section 7 as per your request:
-
----
 
 # From First Principles to Practical Application: A Complete Guide to the Naïve Bayes Classifier
 

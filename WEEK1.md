@@ -798,6 +798,8 @@ difference_single_channel = compute_difference(bg1_image, ob_image)
 print(f"Shape of difference image (grayscale): {difference_single_channel.shape}") # Example: (381, 678)
 cv2_imshow(difference_single_channel.astype(np.uint8)) # Displaying as uint8 for correct visualization
 ```
+<img width="678" height="381" alt="image" src="https://github.com/user-attachments/assets/f099a50b-8d83-4dd8-906f-d59381ca43a3" />
+
 This `difference_single_channel` image is a grayscale representation where brighter pixels indicate areas of significant change (our foreground object), and darker pixels represent areas that are very similar (the green screen).
 
 **Step 3: Crafting the Stencil (Creating the Binary Mask)**

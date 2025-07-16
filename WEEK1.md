@@ -876,7 +876,6 @@ The result is our anime girl seamlessly placed in front of the Tokyo cityscape, 
 | ![Object on Green Screen](Object.png) | ![Binary Mask Example](Object_Binary_Mask.png) | ![New Background](NewBackground.jpg) | ![Composite Image](Composite_Image.png) |
 |      (Original Foreground)      |   (The Stencil)   |          (Our New World)           |  (The Magic Outcome!)   |
 
-*(Note: The "Binary Mask Example" and "Composite Image" above are illustrative images generated to represent the visual output of the code, as direct image generation is not available in this environment.)*
 
 ---
 

@@ -180,11 +180,12 @@ With a firm grasp of Bayes' Rule, we can now make the leap from pure theory to a
 
 The goal of a classification problem is to take a sample with a set of features, $X = (x_1, x_2, \dots, x_n)$, and assign it to one of a fixed set of classes, $C = \{c_1, c_2, \dots, c_m\}$. The Bayesian approach is to calculate the posterior probability $P(c|X)$ for every possible class `c` and then choose the class that is most probable. This is known as the **Maximum A Posteriori (MAP)** hypothesis.
 *   **MAP Decision Rule:** Choose the class $c_{\text{MAP}}$ such that:
-    $c_{\text{MAP}} = \underset{c \in C}{\operatorname{argmax}} P(c|X) = \underset{c \in C}{\operatorname{argmax}} \frac{P(X|c)P(c)}{P(X)}$
+<img width="612" height="84" alt="image" src="https://github.com/user-attachments/assets/f6370d43-53ce-4c38-bffa-3dd15ce1c4ad" />
+
 
 A crucial practical insight emerges here. When we are comparing the posterior probabilities for different classes ($c_1, c_2, \dots$), the denominator, $P(X)$, is the same for every class. It is a constant scaling factor. Therefore, to find the class that maximizes the posterior, we don't actually need to calculate $P(X)$. We only need to find the class that maximizes the numerator.
 *   **Simplified MAP Rule:**
-    $c_{\text{MAP}} = \underset{c \in C}{\operatorname{argmax}} P(X|c)P(c)$
+<img width="618" height="69" alt="image" src="https://github.com/user-attachments/assets/8d3ab456-ca88-4113-b6a2-1ecd484025b4" />
 
 This is a massive computational shortcut. It allows us to find the most likely class by only calculating the likelihood $P(X|c)$ and the prior $P(c)$ for each class, which are typically much easier to estimate from training data.
 
@@ -195,11 +196,13 @@ The most challenging part of the MAP calculation is the likelihood term, $P(X|c)
 To make this tractable, the Naïve Bayes classifier makes a bold and simplifying assumption: **all features are conditionally independent given the class**. This means that if we know the class, the value of one feature gives us no additional information about the value of another feature.
 
 This assumption allows us to break down the complex joint likelihood into a simple product of individual likelihoods:
-*   **Conditional Independence Assumption:** $P(x_1, x_2, \dots, x_n|c) = P(x_1|c) \cdot P(x_2|c) \cdot \dots \cdot P(x_n|c)$.
+*   **Conditional Independence Assumption:**
+<img width="630" height="74" alt="image" src="https://github.com/user-attachments/assets/f5eb9123-c0eb-4d50-b8f0-3dc6ee7e4e6f" />
 
 Plugging this into our simplified MAP rule gives us the final formula for the Naïve Bayes Classifier:
 *   **Naïve Bayes Classification Rule:**
-    $c_{\text{NB}} = \underset{c \in C}{\operatorname{argmax}} P(c) \prod_{i=1}^{n} P(x_i|c)$
+<img width="627" height="97" alt="image" src="https://github.com/user-attachments/assets/9d9c32d7-885b-4c82-969d-384ed5f114e2" />
+
 
 This assumption is the "secret sauce" of Naïve Bayes. It is "naïve" because in the real world, features are rarely truly independent (for example, in a text, the word "San" is highly dependent on the word "Francisco"). However, this simplification is also its greatest strength. It makes the algorithm incredibly fast, efficient, and capable of handling datasets with a very high number of features (like text classification, where every unique word can be a feature). By not attempting to model complex interactions between features, it also avoids overfitting, especially when training data is limited.
 

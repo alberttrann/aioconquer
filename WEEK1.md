@@ -934,7 +934,7 @@ print(f"Total Sales where Newspaper spend > average: {total_sales_conditionally:
 
 ---
 
-## Conclusion: Your Journey with NumPy Has Just Begun
+## Conclusion:
 
 We've covered a substantial amount of ground, from the fundamental memory layout that grants NumPy its exceptional speed to the high-level operations that underpin complex data analysis. It should be clear by now that NumPy's capabilities stem from a few core principles:
 

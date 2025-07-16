@@ -334,36 +334,8 @@ At its heart, vectorization is the practice of performing operations on entire a
 
 Consider a simple task: adding two large lists of numbers.
 
-**The Loop Way (Element-by-Element Processing):**
+<img width="865" height="658" alt="image" src="https://github.com/user-attachments/assets/2662b703-3755-4ee6-9014-79a20cf8fcc3" />
 
-```python
-# Non-vectorized code using Python lists
-size = 1_000_000
-list1 = list(range(size))
-list2 = list(range(size))
-result_list = []
-
-import time
-start_time = time.perf_counter()
-for i in range(size):
-    result_list.append(list1[i] + list2[i])
-end_time = time.perf_counter()
-print(f"Loop Way Time: {(end_time - start_time) * 1000:.4f} ms")
-```
-
-**The NumPy Way (Vectorized Array Operation):**
-
-```python
-# Vectorized code using NumPy arrays
-size = 1_000_000
-array1 = np.arange(size)
-array2 = np.arange(size)
-
-start_time_np = time.perf_counter()
-result_array = array1 + array2 # Vectorized addition
-end_time_np = time.perf_counter()
-print(f"NumPy Way Time: {(end_time_np - start_time_np) * 1000:.4f} ms")
-```
 
 You'll quickly notice the NumPy way is dramatically faster. Why? The Python `for` loop is executed by the relatively slow Python interpreter, which must handle dynamic typing and object management for each iteration. In contrast, the vectorized NumPy operation (`array1 + array2`) pushes the entire calculation down to a single function call in a pre-compiled, highly optimized C (or Fortran) library. This C code then iterates over the arrays' contiguous memory at the full speed of your CPU, with none of the Python interpreter's overhead.
 

@@ -596,11 +596,11 @@ Image data is frequently stored as `uint8` (8-bit unsigned integer) arrays. This
 
 ```python
 # Assume 'image_array' is a NumPy array of dtype uint8 (e.g., from an image)
-# image_array = np.array([[200, 150], [240, 50]], dtype=np.uint8)
+image_array = np.array([[200, 150], [240, 50]], dtype=np.uint8)
 
 # This naive addition will produce unexpected results due to uint8 overflow!
-# bright_image = image_array + 100
-# print(bright_image)
+bright_image = image_array + 100
+print(bright_image)
 # If original pixel is 200, 200 + 100 = 300. In uint8, this "wraps around" to 300 % 256 = 44.
 # This causes bizarre color shifts and visual artifacts.
 ```
@@ -634,11 +634,7 @@ print(f"Final (uint8, correct):\n{final_image_uint8}")
 # Final (uint8, correct): 255
 ```
 
-This example vividly demonstrates why understanding `dtype` and careful type handling are non-negotiable when working with NumPy, especially in domains like image processing.
-
-Okay, this is an excellent plan! We'll integrate the detailed explanations of grayscale conversion methods and the full background subtraction process, including code snippets and conceptual breakdowns, directly into the "Case Study 2" section. This will make the blog post even more informative and comprehensive.
-
-Here's the revised section, ready to be dropped into the main blog:
+This example demonstrates why understanding `dtype` and careful type handling are non-negotiable when working with NumPy, especially in domains like image processing.
 
 ---
 

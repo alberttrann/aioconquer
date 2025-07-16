@@ -684,6 +684,8 @@ gray_img_01 = (np.max(img, axis=2) + np.min(img, axis=2)) / 2
 print(f"Grayscale pixel value (Lightness) at (0, 0): {gray_img_01[0, 0]:.1f}")
 # The full image can be displayed using matplotlib.pyplot.imshow(gray_img_01, cmap='gray')
 ```
+<img width="865" height="545" alt="image" src="https://github.com/user-attachments/assets/39db22e5-d1fd-4570-81b1-ad22c27e80db" />
+
 This method is intuitive and computationally inexpensive.
 
 **Method 2: Average Method**
@@ -706,6 +708,8 @@ gray_img_02 = np.mean(img, axis=2)
 print(f"Grayscale pixel value (Average) at (0, 0): {gray_img_02[0, 0]:.1f}")
 # The full image can be displayed using matplotlib.pyplot.imshow(gray_img_02, cmap='gray')
 ```
+<img width="865" height="555" alt="image" src="https://github.com/user-attachments/assets/3e12d101-770d-4c29-913a-47b8325e8a06" />
+
 While simple, this method doesn't accurately reflect human perception of brightness, as we perceive green light more intensely than red or blue.
 
 **Method 3: Luminosity Method**
@@ -727,6 +731,8 @@ gray_img_03 = 0.21 * img[:,:,0] + 0.72 * img[:,:,1] + 0.07 * img[:,:,2]
 print(f"Grayscale pixel value (Luminosity) at (0, 0): {gray_img_03[0, 0]:.1f}")
 # The full image can be displayed using matplotlib.pyplot.imshow(gray_img_03, cmap='gray')
 ```
+<img width="864" height="551" alt="image" src="https://github.com/user-attachments/assets/1705f332-b36f-434d-9044-0756f2b818f7" />
+
 This method produces the most visually accurate grayscale representation for most applications.
 
 #### Green Screen Magic: Unveiling Background Subtraction

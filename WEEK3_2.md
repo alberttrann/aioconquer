@@ -1,12 +1,6 @@
-Of course. Here is the final, comprehensive blog post that merges the engaging narrative and analogies of the first version with the deep foundational knowledge, formulas, and step-by-step code walkthroughs from the second version and your provided notebooks.
-
----
-
 # Beyond the Average: A Deep Dive into the Statistical Engine of AI and Vision
 
-Hello, fellow learners!
-
-Let's be honest, for many of us, the word "statistics" can conjure up images of dusty textbooks, bewildering formulas, and maybe a high school math class we’d rather forget. I get it. But this past week, I dove headfirst into some foundational statistical concepts, and what I found wasn't just theory—it was the source code for how machines perceive and interpret the world.
+For many of us, the word "statistics" can conjure up images of dusty textbooks, bewildering formulas, and maybe a high school math class we’d rather forget. I get it. But this past week, I dove headfirst into some foundational statistical concepts, and what I found wasn't just theory—it was the source code for how machines perceive and interpret the world.
 
 I realized that statistics isn't just about crunching numbers; it's the art of finding stories, patterns, and meaning in a world that's overflowing with data and noise. It’s about asking simple, intuitive questions that lead to profound answers. Questions like:
 
@@ -15,7 +9,7 @@ I realized that statistics isn't just about crunching numbers; it's the art of f
 *   How do we know if two things are related? And more importantly, how do we avoid fooling ourselves?
 *   How can we algorithmically change what we see just by understanding the shape of its data?
 
-This week was a journey from these abstract questions to concrete code and visual AI applications. By the end of this, you'll see how the answer to a simple statistical question helps a computer denoise a photo, analyze texture, or find relevant information in a sea of text. So, let's get into the mechanics.
+This week was a journey from these abstract questions to concrete code and visual AI applications. By the end of this, you'll see how the answer to a simple statistical question helps a computer denoise a photo, analyze texture, or find relevant information in a sea of text. 
 
 ## The Center of It All: Mean, Median, and the "Bill Gates Walks into a Bar" Problem
 
@@ -198,9 +192,12 @@ x_filt = x_filt * 2.5
 cv2.imwrite('edge_s4.jpg', x_filt) # Save the resulting texture map
 ```
 before:
-![alt text](image-2.png)
+
+<img width="521" height="295" alt="image" src="https://github.com/user-attachments/assets/79db8ddc-69e0-4d54-a5ed-d6b62c0d9927" />
+
 after:
-![alt text](image-1.png)
+
+<img width="527" height="301" alt="image" src="https://github.com/user-attachments/assets/7d795b3d-9a2c-4b0b-a156-b143e72a72b5" />
 
 The abstract concept of "dispersion" becomes the computer's direct method for "perceiving" physical texture.
 
@@ -329,7 +326,7 @@ plt.xlim([0, 256])
 plt.tight_layout()
 plt.show()
 ```
-![alt text](image-3.png)
+<img width="1641" height="1095" alt="image" src="https://github.com/user-attachments/assets/88c802ef-22c2-4cf0-929b-da4011bf454b" />
 
 **Analyzing the Output:**
 Theoretically, the new image should be expected to have deep blacks, bright whites and much more visible detail in the mid tones. HOWEVER, **In many cases, especially for artistic or natural photographs, standard histogram equalization *does* make the image look "worse" or at least less natural.**And this is exactly the case with this result. It reveals the crucial difference between a purely mathematical optimization and an aesthetically pleasing result.
@@ -455,7 +452,7 @@ plt.show()
 ```
 When you run this, you will see that the CLAHE result is vastly superior. It enhances local contrast in the trees and the hills while preserving the smooth texture of the sky, avoiding the noise amplification and harshness of the global method.
 
-![alt text](image-4.png)
+<img width="1919" height="1094" alt="image" src="https://github.com/user-attachments/assets/0c3b3dc4-1c4d-436f-9b34-10bd77f7dfa1" />
 
 **Conclusion:** Your observation was spot on. It highlights that understanding the *limitations* of an algorithm is just as important as knowing how to use it. Global histogram equalization is a powerful but blunt tool, and recognizing when it fails leads us directly to more sophisticated and effective techniques like CLAHE.
 

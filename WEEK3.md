@@ -454,7 +454,7 @@ When you run this, you will see that the CLAHE result is vastly superior. It enh
 
 <img width="1919" height="1094" alt="image" src="https://github.com/user-attachments/assets/0c3b3dc4-1c4d-436f-9b34-10bd77f7dfa1" />
 
-**Conclusion:** Your observation was spot on. It highlights that understanding the *limitations* of an algorithm is just as important as knowing how to use it. Global histogram equalization is a powerful but blunt tool, and recognizing when it fails leads us directly to more sophisticated and effective techniques like CLAHE.
+**Conclusion:** This highlights that understanding the *limitations* of an algorithm is just as important as knowing how to use it. Global histogram equalization is a powerful but blunt tool, and recognizing when it fails leads us directly to more sophisticated and effective techniques like CLAHE.
 
 #### A Manual Walkthrough
 

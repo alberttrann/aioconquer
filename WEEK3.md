@@ -20,9 +20,9 @@ Our first stop is the most fundamental question of all: how do we summarize a wh
 The first tool we all learn is the **Mean**, or the arithmetic average. It's the concept we've known since grade school: you sum everything up and divide by how many there are. In statistics, the mean of a sample is considered an *estimator* of the **Expected Value** `E[X]` of the underlying probability distribution.
 
 **Formula:**
-$$
-\mu = \frac{1}{N}\sum_{i=1}^{N}X_i
-$$
+
+<img width="730" height="108" alt="image" src="https://github.com/user-attachments/assets/168ea10e-a794-46af-b4fa-3ec106607149" />
+
 
 The mean is fantastic for getting a quick sense of the "center of mass" of your data. It’s the balance point. But, as I was reminded this week, our familiar friend has a critical weakness.
 
@@ -119,10 +119,14 @@ Knowing the "center" doesn't tell the whole story. We also need to measure the *
 ### Variance and Standard Deviation - Quantifying Spread
 
 *   **Variance (`var(X)` or `σ²`)** is the average of the *squared differences* from the mean. Squaring the differences ensures that negative and positive deviations don't cancel each other out and penalizes larger deviations more heavily.
-    **Population Variance Formula:** $$ \text{var}(X) = \frac{1}{N}\sum_{i=1}^{N}(X_i - \mu)^2 $$
+    **Population Variance Formula:**
+
+    <img width="676" height="96" alt="image" src="https://github.com/user-attachments/assets/77c3726d-5a2f-4fd6-8557-033606b4c0a1" />
 
 *   **Standard Deviation (`σ`)** is simply the square root of the variance. It brings the measure back into the same units as our original data and represents the "typical distance" of a data point from the mean.
-    **Formula:** $$ \sigma = \sqrt{\text{var}(X)} $$
+    **Formula:**
+
+    <img width="682" height="70" alt="image" src="https://github.com/user-attachments/assets/16b691b6-492d-4132-af55-c91065d5163b" />
 
 #### Population vs. Sample: The `n-1` Enigma
 
@@ -214,9 +218,9 @@ Real-world data is about relationships. To quantify them, we use covariance and 
 **Pearson Correlation Coefficient (ρ or r)** solves this by normalizing the covariance. It divides the covariance by the product of the standard deviations of the two variables, scaling the result to a universal range of **-1 to +1**.
 
 **Formula:**
-$$
-\rho_{X,Y} = \frac{\text{Cov}(X,Y)}{\sigma_X \sigma_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}
-$$
+
+<img width="755" height="98" alt="image" src="https://github.com/user-attachments/assets/eb0eadde-4011-42e1-9123-3b90e39337d5" />
+
 
 | Value of r | Interpretation               |
 | :--------- | :--------------------------- |
@@ -255,9 +259,9 @@ The core idea of Histogram Equalization is simple and brilliant. **Analogy:** Im
 The "how" is the magical part. The CDF itself provides the mathematical formula that tells each pixel where it needs to move to achieve this "spreading out."
 
 **Formula:**
-$$
-\text{new\_pixel\_value} = \text{round}((L-1) \times \text{CDF}(\text{old\_pixel\_value}))
-$$
+
+<img width="732" height="66" alt="image" src="https://github.com/user-attachments/assets/74f9216b-750f-4969-8081-a908bcc84dd7" />
+
 Where `L` is the number of gray levels (typically 256 for an 8-bit image). This process takes the pixels in the densely populated part of the histogram (where the CDF is rising steeply) and stretches them far apart. The result is an image with a much more uniform, "flat" histogram, which corresponds visually to a high-contrast image.
 
 #### A Practical Demonstration with Python
